@@ -44,11 +44,11 @@ int main(int argc, char *argv[])
         {
             total_x =total_x + J_x[j]*J_x[j+ct];
             total_y =total_y + J_y[j]*J_y[j+ct];
-            total_y =total_y + J_y[j]*J_y[j+ct];
+            total_z =total_z + J_z[j]*J_z[j+ct];
         }
         autocorr_x.push_back(total_x/(double)(size_data-ct));
-        autocorr_y.push_back(total_x/(double)(size_data-ct));
-        autocorr_z.push_back(total_x/(double)(size_data-ct));
+        autocorr_y.push_back(total_y/(double)(size_data-ct));
+        autocorr_z.push_back(total_z/(double)(size_data-ct));
     }
     ofstream f_out("autocorrelation.dat");
     f_out << "# time autocorr   "  <<endl;
